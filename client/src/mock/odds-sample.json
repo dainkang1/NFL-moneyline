@@ -1,0 +1,114 @@
+[
+  {
+    "id": "game_1",
+    "sport_key": "americanfootball_nfl",
+    "commence_time": "2025-09-14T17:00:00Z",
+    "home_team": "Dallas Cowboys",
+    "away_team": "New York Giants",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2025-09-10T12:00:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2025-09-10T12:00:00Z",
+            "outcomes": [
+              { "name": "Dallas Cowboys", "price": -150 },
+              { "name": "New York Giants", "price": +130 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2025-09-10T12:00:00Z",
+            "outcomes": [
+              { "name": "Dallas Cowboys", "price": -110, "point": -3.5 },
+              { "name": "New York Giants", "price": -110, "point": +3.5 }
+            ]
+          },
+          {
+            "key": "totals",
+            "last_update": "2025-09-10T12:00:00Z",
+            "outcomes": [
+              { "name": "Over", "price": -105, "point": 46.5 },
+              { "name": "Under", "price": -115, "point": 46.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2025-09-10T12:00:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2025-09-10T12:00:00Z",
+            "outcomes": [
+              { "name": "Dallas Cowboys", "price": -145 },
+              { "name": "New York Giants", "price": +125 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2025-09-10T12:00:00Z",
+            "outcomes": [
+              { "name": "Dallas Cowboys", "price": -108, "point": -3.0 },
+              { "name": "New York Giants", "price": -112, "point": +3.0 }
+            ]
+          },
+          {
+            "key": "totals",
+            "last_update": "2025-09-10T12:00:00Z",
+            "outcomes": [
+              { "name": "Over", "price": -110, "point": 47.0 },
+              { "name": "Under", "price": -110, "point": 47.0 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "game_2",
+    "sport_key": "americanfootball_nfl",
+    "commence_time": "2025-09-14T20:25:00Z",
+    "home_team": "San Francisco 49ers",
+    "away_team": "Seattle Seahawks",
+    "bookmakers": [
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2025-09-10T12:00:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2025-09-10T12:00:00Z",
+            "outcomes": [
+              { "name": "San Francisco 49ers", "price": -220 },
+              { "name": "Seattle Seahawks", "price": +180 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2025-09-10T12:00:00Z",
+            "outcomes": [
+              { "name": "San Francisco 49ers", "price": -110, "point": -5.5 },
+              { "name": "Seattle Seahawks", "price": -110, "point": +5.5 }
+            ]
+          },
+          {
+            "key": "totals",
+            "last_update": "2025-09-10T12:00:00Z",
+            "outcomes": [
+              { "name": "Over", "price": -112, "point": 44.5 },
+              { "name": "Under", "price": -108, "point": 44.5 }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
+
