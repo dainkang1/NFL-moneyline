@@ -37,3 +37,4 @@ API Details (Proxy)
 - `GET /api/odds?date=YYYY-MM-DD&regions=us`
   - Proxies to The Odds API with markets: `h2h,spreads,totals` and odds format `american`.
   - If `BOOKMAKERS` is set in `.env`, the proxy limits results to those books.
+# NFL-moneyline
