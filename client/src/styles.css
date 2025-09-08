@@ -1,10 +1,11 @@
 :root {
-  --bg: #0f172a;
-  --card: #111827;
-  --text: #e5e7eb;
-  --muted: #94a3b8;
-  --accent: #60a5fa;
-  --border: #1f2937;
+  --bg: #0a0f14;          /* darker DK-like base */
+  --card: #12161c;        /* deep slate */
+  --text: #e6e8ec;        /* soft white */
+  --muted: #9aa4b2;       /* cool gray */
+  --accent: #21c45a;      /* DK-like neon green */
+  --accent-weak: #0c2616; /* dark green tint */
+  --border: #1e2937;      /* slate border */
 }
 
 * { box-sizing: border-box; }
@@ -24,19 +25,43 @@ label.toggle { display: inline-flex; align-items: center; gap: 6px; cursor: poin
 .status.error { border-color: #ef4444; color: #fecaca; }
 
 .games { display: grid; gap: 16px; }
-.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px; box-shadow: 0 1px 0 #0b0f14 inset, 0 0 0 1px rgba(0,0,0,0.25); }
 
 .meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
-.teams { display: inline-flex; gap: 8px; font-weight: 600; }
+.teams { display: inline-flex; gap: 10px; font-weight: 700; align-items: center; }
 .at { color: var(--muted); font-weight: 400; }
 .time { color: var(--muted); font-size: 13px; }
 .muted { color: var(--muted); }
 
-.book-header, .row { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 8px; padding: 8px 6px; align-items: center; }
-.book-header { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+.book-header, .row { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 10px; padding: 10px 6px; align-items: center; }
+.book-header { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
 .row:not(:last-child) { border-bottom: 1px dashed var(--border); }
-.col.book { font-weight: 600; }
-.inline { display: grid; gap: 2px; font-size: 13px; }
+.col.book { font-weight: 700; color: #e9eef3; }
+.inline { display: grid; grid-auto-flow: row; gap: 6px; font-size: 13px; }
+
+/* Team label with logo */
+.team-label { display: inline-flex; gap: 8px; align-items: center; }
+.team-label.compact { gap: 6px; }
+.team-label.right { justify-content: flex-end; }
+.team-logo { width: 22px; height: 22px; object-fit: contain; filter: drop-shadow(0 0 0 rgba(0,0,0,0)); }
+.team-name { line-height: 1; }
+
+/* Odds chips resembling selectable bet buttons */
+.odds-chip { display: inline-flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 176px; padding: 9px 12px; border: 1px solid var(--border); border-radius: 10px; background: #0c121a; cursor: default; transition: border-color .15s ease, box-shadow .15s ease, background .15s ease; }
+.odds-chip .label { color: #d3d9e2; font-weight: 600; letter-spacing: .01em; }
+.odds-chip .value { color: #e6e8ec; font-weight: 800; }
+.odds-chip .value em { font-style: normal; color: var(--muted); font-weight: 600; margin-left: 6px; }
+.odds-chip .value .point { color: var(--accent); font-weight: 800; }
+.odds-chip:hover { border-color: var(--accent); box-shadow: 0 0 0 1px rgba(33,196,90,.3) inset; background: #0d141d; }
+.odds-chip .value strong { color: var(--accent); }
+
+/* chip sub-structure */
+.chip-left { display: inline-flex; align-items: center; gap: 8px; }
+.chip-right { display: inline-flex; align-items: center; }
 
 input[type="date"] { background: #0b1220; color: var(--text); border: 1px solid var(--border); padding: 6px 8px; border-radius: 6px; }
 select { background: #0b1220; color: var(--text); border: 1px solid var(--border); padding: 6px 8px; border-radius: 6px; }
+
+/* Header accent underline */
+header h1 { position: relative; }
+header h1:after { content: ""; position: absolute; left: 0; bottom: -6px; width: 36px; height: 3px; background: var(--accent); border-radius: 2px; }

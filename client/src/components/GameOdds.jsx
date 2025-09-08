@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import TeamLabel from './TeamLabel';
 
 function formatTime(iso) {
   try {
@@ -31,8 +32,22 @@ function Moneyline({ outcomes, homeTeam, awayTeam }) {
   const away = outcomes.find((o) => o.name === awayTeam);
   return (
     <div className="inline">
-      <div>{awayTeam}: <strong>{away?.price ?? '—'}</strong></div>
-      <div>{homeTeam}: <strong>{home?.price ?? '—'}</strong></div>
+      <div className="odds-chip">
+        <div className="chip-left">
+          <TeamLabel name={awayTeam} size={18} display="abbr" compact />
+        </div>
+        <div className="chip-right">
+          <span className="value">{away?.price ?? '—'}</span>
+        </div>
+      </div>
+      <div className="odds-chip">
+        <div className="chip-left">
+          <TeamLabel name={homeTeam} size={18} display="abbr" compact />
+        </div>
+        <div className="chip-right">
+          <span className="value">{home?.price ?? '—'}</span>
+        </div>
+      </div>
     </div>
   );
 }
@@ -43,8 +58,22 @@ function Spread({ outcomes, homeTeam, awayTeam }) {
   const away = outcomes.find((o) => o.name === awayTeam);
   return (
     <div className="inline">
-      <div>{awayTeam}: <strong>{away?.point ?? '—'}</strong> ({away?.price ?? '—'})</div>
-      <div>{homeTeam}: <strong>{home?.point ?? '—'}</strong> ({home?.price ?? '—'})</div>
+      <div className="odds-chip">
+        <div className="chip-left">
+          <TeamLabel name={awayTeam} size={18} display="abbr" compact />
+        </div>
+        <div className="chip-right">
+          <span className="value"><span className="point">{away?.point ?? '—'}</span> <em>{away?.price ?? '—'}</em></span>
+        </div>
+      </div>
+      <div className="odds-chip">
+        <div className="chip-left">
+          <TeamLabel name={homeTeam} size={18} display="abbr" compact />
+        </div>
+        <div className="chip-right">
+          <span className="value"><span className="point">{home?.point ?? '—'}</span> <em>{home?.price ?? '—'}</em></span>
+        </div>
+      </div>
     </div>
   );
 }
@@ -55,8 +84,14 @@ function Total({ outcomes }) {
   const under = outcomes.find((o) => o.name?.toLowerCase() === 'under');
   return (
     <div className="inline">
-      <div>Over: <strong>{over?.point ?? '—'}</strong> ({over?.price ?? '—'})</div>
-      <div>Under: <strong>{under?.point ?? '—'}</strong> ({under?.price ?? '—'})</div>
+      <div className="odds-chip">
+        <div className="chip-left"><span className="label">Over</span></div>
+        <div className="chip-right"><span className="value"><span className="point">{over?.point ?? '—'}</span> <em>{over?.price ?? '—'}</em></span></div>
+      </div>
+      <div className="odds-chip">
+        <div className="chip-left"><span className="label">Under</span></div>
+        <div className="chip-right"><span className="value"><span className="point">{under?.point ?? '—'}</span> <em>{under?.price ?? '—'}</em></span></div>
+      </div>
     </div>
   );
 }
@@ -72,9 +107,9 @@ export default function GameOdds({ game }) {
     <div className="card">
       <div className="meta">
         <div className="teams">
-          <div className="away">{away_team}</div>
+          <div className="away"><TeamLabel name={away_team} /></div>
           <div className="at">@</div>
-          <div className="home">{home_team}</div>
+          <div className="home"><TeamLabel name={home_team} /></div>
         </div>
         <div className="time">{formatTime(commence_time)}</div>
       </div>
@@ -102,4 +137,3 @@ export default function GameOdds({ game }) {
     </div>
   );
 }
-
