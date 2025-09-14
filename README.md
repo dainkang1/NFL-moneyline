@@ -1,5 +1,10 @@
 NFL Moneyline — Football Odds (React + Express)
 
+Fast Start
+- One-time: `make setup` (copies `server/.env` and installs deps)
+- Run dev: `make dev` (starts server on 5050 and Vite on 5173)
+- Without Make: `bash scripts/setup.sh` then `bash scripts/dev.sh`
+
 Overview
 - React client shows weekly football lines: Moneyline, Spread, and Totals (Over/Under) per sportsbook.
 - Express proxy server calls The Odds API so your API key is never exposed in the browser.
