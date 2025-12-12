@@ -51,7 +51,11 @@ app.get('/api/odds', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server listening on http://localhost:${PORT}`);
-});
+// Only listen when not under test
+if (process.env.NODE_ENV !== 'test' && !process.env.VITEST) {
+  app.listen(PORT, () => {
+    console.log(`Server listening on http://localhost:${PORT}`);
+  });
+}
 
+export default app;

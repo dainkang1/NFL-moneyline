@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "vitest",
+    "test:run": "vitest run"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -14,7 +16,8 @@
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "supertest": "^7.0.0",
+    "vitest": "^2.1.3"
   }
 }
-
